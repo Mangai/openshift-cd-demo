@@ -431,7 +431,7 @@ objects:
               "repo_name": "openshift-tasks"
             }
 
-                        if [ "${EPHEMERAL}" == "true" ] ; then
+            if [ "${EPHEMERAL}" == "true" ] ; then
               oc new-app -f https://raw.githubusercontent.com/OpenShiftDemos/nexus/master/nexus3-template.yaml --param=NEXUS_VERSION=3.13.0 --param=MAX_MEMORY=2Gi
             else
               oc new-app -f https://raw.githubusercontent.com/OpenShiftDemos/nexus/master/nexus3-persistent-template.yaml --param=NEXUS_VERSION=3.13.0 --param=MAX_MEMORY=2Gi
@@ -467,7 +467,7 @@ objects:
               "uid": 1,
               "repo_name": "openshift-tasks"
             }
-             EOF
+            EOF
 
             _RETURN=$(curl -o /tmp/curl.log -sL -w "%{http_code}" -H "Content-Type: application/json" \
             -u $GOGS_USER:$GOGS_PWD -X POST http://$GOGS_SVC:3000/api/v1/repos/migrate -d @/tmp/data.json)
