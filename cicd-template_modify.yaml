@@ -76,11 +76,16 @@ objects:
     name: tasks-pipeline
   spec:
     triggers:
-      - type: GitHub
+      - tye: GitHub
         github:
           secret: ${WEBHOOK_SECRET}
       - type: Generic
-     strategy:
+        generic:
+          secret: ${WEBHOOK_SECRET}
+    runPolicy: Serial
+    source:
+      type: None
+    strategy:
       jenkinsPipelineStrategy:
         env:
         - name: DEV_PROJECT
