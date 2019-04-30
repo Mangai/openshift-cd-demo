@@ -266,7 +266,7 @@ objects:
         <annotations/>
         <imagePullSecrets/>
       </org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
- skopeo-template: |-
+    skopeo-template: |-
       <org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
         <inheritFrom></inheritFrom>
         <name>skopeo</name>
