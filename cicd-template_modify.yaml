@@ -173,7 +173,7 @@ objects:
                   }
                 }
               }
-               stage('Deploy STAGE') {
+              stage('Deploy STAGE') {
                 steps {
                   script {
                     openshift.withCluster() {
@@ -206,7 +206,7 @@ objects:
                   }
                 }
               }
-               stage('Deploy PROD') {
+              stage('Deploy PROD') {
                 steps {
                   script {
                     openshift.withCluster() {
@@ -217,7 +217,6 @@ objects:
                   }
                 }
               }
-
             }
           }
       type: JenkinsPipeline
