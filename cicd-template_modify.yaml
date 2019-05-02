@@ -284,7 +284,7 @@ objects:
         <containers>
           <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
             <name>jnlp</name>
-            <image>docker.io/Mangai/jenkins-slave-skopeo-centos7</image>
+            <image>docker.io/mangai/jenkins-slave-skopeo-centos7</image>
             <privileged>false</privileged>
             <alwaysPullImage>false</alwaysPullImage>
             <workingDir>/tmp</workingDir>
