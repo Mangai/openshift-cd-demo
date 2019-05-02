@@ -200,7 +200,7 @@ objects:
                           sh "skopeo copy docker://quay.io/${QUAY_USERNAME}/${QUAY_REPOSITORY}:latest docker://quay.io/${QUAY_USERNAME}/${QUAY_REPOSITORY}:prod --src-creds \"$QUAY_USER:$QUAY_PWD\" --dest-creds \"$QUAY_USER:$QUAY_PWD\" --src-tls-verify=false --dest-tls-verify=false"
                         }
                       } else {
-                        openshift.tag("${env.STAGE_PROJECT}/tasks:latest", "${env.PROD_PROJECT}/tasks:prod")
+                        openshift.tag("${env.DEV_PROJECT}/tasks:latest", "${env.PROD_PROJECT}/tasks:prod")
                       }
                     }
                   }
