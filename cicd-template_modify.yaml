@@ -368,8 +368,8 @@ objects:
               oc set triggers dc -l app=tasks --containers=tasks --from-image=tasks:stage --manual -n ${STAGE_PROJECT}
 
               # prod
-              oc new-app tasks:stage --allow-missing-images -n ${PROD_PROJECT}
-              oc set triggers dc -l app=tasks --containers=tasks --from-image=tasks:stage --manual -n ${PROD_PROJECT}
+              oc new-app tasks:prod --allow-missing-images -n ${PROD_PROJECT}
+              oc set triggers dc -l app=tasks --containers=tasks --from-image=tasks:prod --manual -n ${PROD_PROJECT}
             fi
 
             # dev project
