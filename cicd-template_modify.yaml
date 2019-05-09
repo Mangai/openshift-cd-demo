@@ -420,10 +420,10 @@ objects:
             fi
 
             if [ "${DEPLOY_CHE}" == "true" ] ; then
-              oc process -f https://github.com/Mangai/che/edit/master/deploy/openshift/templates/che-workspace-service-account.yaml \
+              oc process -f https://raw.githubusercontent.com/Mangai/che/master/deploy/openshift/templates/che-workspace-service-account.yaml \
                   --param SERVICE_ACCOUNT_NAMESPACE=$CICD_NAMESPACE --param=SERVICE_ACCOUNT_NAME=che-workspace | oc create -f -
 
-              oc process -f https://github.com/Mangai/che/blob/master/deploy/openshift/templates/che-server-template.yaml \
+              oc process -f https://raw.githubusercontent.com/Mangai/che/master/deploy/openshift/templates/che-server-template.yaml \
                 --param ROUTING_SUFFIX=$HOSTNAME \
                 --param CHE_MULTIUSER=false \
                 --param CHE_INFRA_OPENSHIFT_PROJECT=$CICD_NAMESPACE \
